@@ -1,379 +1,160 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Choppyの盒子小店 - 我的世界专属盒中盒</title><style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-		}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍀·𝐂𝐏𝐏·𝐓𝐞𝐚𝐦·𝟐𝐛𝟐𝐭𝐌𝐂𝐏𝐄·🫧</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+            overflow: hidden;
+        }
+        /* 下雪画布全屏覆盖 */
+        #snowCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .title {
+            font-size: 46px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #4285f4, #1a56db);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        .sub-text {
+            font-size: 18px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #00bfff, #00ced1);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        .link-btn {
+            background: linear-gradient(135deg, #4285f4, #1a56db);
+            padding: 20px 55px;
+            font-size: 26px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(26, 86, 219, 0.4);
+            transition: 0.3s ease;
+            margin: 12px 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 2;
+        }
+        .link-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 35px rgba(26, 86, 219, 0.5);
+        }
+        .link-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 6px 18px rgba(26, 86, 219, 0.3);
+        }
+        .qq-icon, .mc-icon {
+            width: 32px;
+            height: 32px;
+            fill: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <!-- 下雪画布 -->
+    <canvas id="snowCanvas"></canvas>
 
-		html {
-			scroll-behavior: smooth;
-		}
+    <h1 class="title">欢迎加入我们</h1>
+    <div class="sub-text">2b2tmcpe - CPP CLAN</div>
 
-		body {
-			background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
-			overflow-x: hidden;
-		}
+    <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=pd3PQMQJZXmNpWRG5955jpBMHCP%2BLh553ieGSranNNnoUoiFUf37ZuU0BgficCjJ&busi_data=eyJncm91cENvZGUiOiI5OTEzMjE1MTQiLCJ0b2tlbiI6InZ5MFRSWFBjcTdxOFN3ek1kckNUcjk0MGZLbnJ4bVV3aVZjYi92bW9BWkxnaHZRUllUcXVsRUtsSldaa2VNS0ciLCJ1aW4iOiIzNjg4MDAxNjc1In0=&data=4PINaJWN9kS27bexTdILOrQTawGC9oqjqawPbM3qLh-hqRVxzvOkI7JIJt-DqgYEHvaESksGeWzRD-x7u_zq_veKkBz5ajSgUS5LXAzuQ-U&svctype=5&tempid=h5_group_info" target="_blank" class="link-btn">
+        <!-- QQ SVG图标 -->
+        <svg class="qq-icon" viewBox="0 0 1024 1024">
+            <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm172.1 659.1c-27.8 9.2-60.3 14.3-94.1 14.3-33.8 0-66.3-5.1-94.1-14.3-29.3-9.7-34.9-13.2-34.9-21.3 0-8.2 5.6-11.6 34.9-21.3 27.8-9.2 60.3-14.3 94.1-14.3 33.8 0 66.3 5.1 94.1 14.3 29.3 9.7 34.9 13.2 34.9 21.3 0 8.2-5.6 11.6-34.9 21.3zm-237.2-285c0-47.9 38.8-86.7 86.7-86.7s86.7 38.8 86.7 86.7-38.8 86.7-86.7 86.7-86.7-38.8-86.7-86.7z"></path>
+        </svg>
+        组织𝗤𝗤群
+    </a>
 
-		@keyframes fadeInUp {
-			from {
-				opacity: 0;
-				transform: translateY(30px);
-			}
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
+    <a href="https://www.xbox.com/zh-CN/play/user/ChoppyNest94347" target="_blank" class="link-btn">
+        <!-- MC 方块风格SVG图标 -->
+        <svg class="mc-icon" viewBox="0 0 1024 1024">
+            <path d="M256 256h512v512H256V256zm64 64v384h384V320H320z"/>
+            <path d="M192 192h64v64h-64zM192 768h64v64h-64zM768 192h64v64h-64zM768 768h64v64h-64z"/>
+        </svg>
+        首领MCID
+    </a>
 
-		@keyframes float {
-			0%, 100% {
-				transform: translateY(0);
-			}
-			50% {
-				transform: translateY(-10px);
-			}
-		}
+    <script>
+        // 下雪效果
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let snowArr = [];
 
-		@keyframes pulse {
-			0%, 100% {
-				transform: scale(1);
-			}
-			50% {
-				transform: scale(1.05);
-			}
-		}
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
 
-		@keyframes slideInLeft {
-			from {
-				opacity: 0;
-				transform: translateX(-50px);
-			}
-			to {
-				opacity: 1;
-				transform: translateX(0);
-			}
-		}
+        // 雪花类
+        class Snow {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height - height;
+                this.r = Math.random() * 2 + 1;
+                this.speed = Math.random() * 1 + 0.5;
+                this.wind = Math.random() * 0.5 - 0.25;
+            }
+            update() {
+                this.y += this.speed;
+                this.x += this.wind;
+                if (this.y > height) {
+                    this.y = -10;
+                    this.x = Math.random() * width;
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                ctx.fillStyle = '#fff';
+                ctx.fill();
+            }
+        }
 
-		@keyframes slideInRight {
-			from {
-				opacity: 0;
-				transform: translateX(50px);
-			}
-			to {
-				opacity: 1;
-				transform: translateX(0);
-			}
-		}
+        // 创建雪花
+        for (let i = 0; i < 120; i++) {
+            snowArr.push(new Snow());
+        }
 
-		nav {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			backdrop-filter: blur(12px);
-			background: rgba(255, 255, 255, 0.7);
-			padding: 16px 5%;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			z-index: 999;
-			box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-			transition: all 0.3s ease;
-		}
-
-		nav.scrolled {
-			padding: 12px 5%;
-			background: rgba(255, 255, 255, 0.85);
-		}
-
-		.logo {
-			font-size: 20px;
-			font-weight: 700;
-			color: #ff9500;
-			animation: slideInLeft 0.6s ease;
-		}
-
-		.nav-links {
-			display: flex;
-			gap: 32px;
-			list-style: none;
-			animation: slideInRight 0.6s ease;
-		}
-
-		.nav-links a {
-			text-decoration: none;
-			color: #333;
-			font-weight: 500;
-			font-size: 15px;
-			position: relative;
-			transition: all 0.3s ease;
-		}
-
-		.nav-links a::after {
-			content: '';
-			position: absolute;
-			bottom: -4px;
-			left: 0;
-			width: 0;
-			height: 2px;
-			background: #ff9500;
-			transition: all 0.3s ease;
-		}
-
-		.nav-links a:hover {
-			color: #ff9500;
-		}
-
-		.nav-links a:hover::after {
-			width: 100%;
-		}
-
-		.hero {
-			margin-top: 100px;
-			padding: 80px 5%;
-			text-align: center;
-			animation: fadeInUp 0.8s ease;
-		}
-
-		.hero h1 {
-			font-size: 56px;
-			font-weight: 800;
-			color: #222;
-			margin-bottom: 16px;
-			background: linear-gradient(135deg, #ff9500 0%, #ff6b00 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-		}
-
-		.hero p {
-			font-size: 20px;
-			color: #666;
-			max-width: 600px;
-			margin: 0 auto 40px;
-		}
-
-		.hero-btn {
-			padding: 14px 32px;
-			border-radius: 8px;
-			border: none;
-			background: linear-gradient(135deg, #ff9500 0%, #ff6b00 100%);
-			color: white;
-			font-weight: 600;
-			font-size: 16px;
-			cursor: pointer;
-			transition: all 0.3s ease;
-			animation: pulse 2s ease-in-out infinite;
-		}
-
-		.hero-btn:hover {
-			transform: scale(1.08);
-			box-shadow: 0 6px 25px rgba(255, 149, 0, 0.4);
-			animation: none;
-		}
-
-		.section-title {
-			font-size: 36px;
-			font-weight: 700;
-			color: #222;
-			text-align: center;
-			margin-bottom: 48px;
-			position: relative;
-		}
-
-		.section-title::after {
-			content: '';
-			position: absolute;
-			bottom: -12px;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 80px;
-			height: 4px;
-			background: linear-gradient(135deg, #ff9500 0%, #ff6b00 100%);
-			border-radius: 2px;
-		}
-
-		.products {
-			padding: 60px 5%;
-		}
-
-		.product-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-			gap: 24px;
-			max-width: 1200px;
-			margin: 0 auto;
-		}
-
-		.product-card {
-			background: white;
-			border-radius: 16px;
-			padding: 32px 24px;
-			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-			transition: all 0.4s ease;
-			animation: fadeInUp 0.6s ease backwards;
-		}
-
-		.product-card:nth-child(1) { animation-delay: 0.1s; }
-		.product-card:nth-child(2) { animation-delay: 0.2s; }
-		.product-card:nth-child(3) { animation-delay: 0.3s; }
-		.product-card:nth-child(4) { animation-delay: 0.4s; }
-		.product-card:nth-child(5) { animation-delay: 0.5s; }
-		.product-card:nth-child(6) { animation-delay: 0.6s; }
-
-		.product-card:hover {
-			transform: translateY(-8px) scale(1.03);
-			box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-		}
-
-		.product-icon {
-			font-size: 40px;
-			margin-bottom: 16px;
-		}
-
-		.product-name {
-			font-size: 20px;
-			font-weight: 600;
-			color: #222;
-			margin-bottom: 12px;
-		}
-
-		.product-price {
-			font-size: 28px;
-			font-weight: 700;
-			color: #ff9500;
-		}
-
-		.payment {
-			padding: 60px 5%;
-			background: white;
-		}
-
-		.payment-container {
-			max-width: 800px;
-			margin: 0 auto;
-			text-align: center;
-		}
-
-		.payment-code {
-			max-width: 300px;
-			width: 100%;
-			border-radius: 16px;
-			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-			margin: 0 auto 24px;
-			animation: float 3s ease-in-out infinite;
-		}
-
-		.payment-desc {
-			font-size: 18px;
-			color: #666;
-			margin-bottom: 16px;
-		}
-
-		.payment-tip {
-			font-size: 16px;
-			color: #999;
-		}
-
-		.contact {
-			padding: 80px 5%;
-		}
-
-		.contact-container {
-			max-width: 600px;
-			margin: 0 auto;
-			text-align: center;
-			animation: fadeInUp 0.6s ease;
-		}
-
-		.contact-desc {
-			font-size: 18px;
-			color: #666;
-			margin-bottom: 32px;
-		}
-
-		.contact-btn {
-			padding: 16px 40px;
-			border-radius: 8px;
-			border: none;
-			background: linear-gradient(135deg, #12b7f5 0%, #0084ff 100%);
-			color: white;
-			font-weight: 600;
-			font-size: 18px;
-			cursor: pointer;
-			text-decoration: none;
-			display: inline-block;
-			transition: all 0.3s ease;
-		}
-
-		.contact-btn:hover {
-			transform: scale(1.05);
-			box-shadow: 0 8px 25px rgba(0, 132, 255, 0.4);
-		}
-
-		footer {
-			background: #222;
-			color: white;
-			text-align: center;
-			padding: 24px 5%;
-			font-size: 14px;
-			color: #999;
-		}
-
-		@media (max-width: 768px) {
-			.hero h1 {
-				font-size: 36px;
-			}
-
-			.hero p {
-				font-size: 16px;
-			}
-
-			.nav-links {
-				gap: 16px;
-			}
-
-			.nav-links a {
-				font-size: 14px;
-			}
-
-			.section-title {
-				font-size: 28px;
-			}
-
-			.product-grid {
-				grid-template-columns: 1fr;
-			}
-		}
-	</style></head><body><nav id="navbar"><ul class="nav-links"><li><a href="#home">首页</a></li><li><a href="#products">商品列表</a></li><li><a href="#payment">付款方式</a></li><li><a href="#contact">联系我</a></li></ul></nav><section class="hero" id="home"><h1>Choppyの盒子小店</h1><p>2b2tmcpe盒中盒 | 全品类道具 | 高性价比 | 极速发货</p><button class="hero-btn" onclick="location.href='#products'">立即选购</button></section><section class="products" id="products"><h2 class="section-title">商品列表</h2><div class="product-grid"><div class="product-card"><div class="product-icon">🍊</div><h3 class="product-name">苹果盒中盒</h3><p class="product-price">¥5.00</p></div><div class="product-card"><div class="product-icon">🍊</div><h3 class="product-name">图腾盒中盒</h3><p class="product-price">¥5.00</p></div><div class="product-card"><div class="product-icon">🍊</div><h3 class="product-name">建筑盒中盒</h3><p class="product-price">¥5.00</p></div><div class="product-card"><div class="product-icon">🍊</div><h3 class="product-name">装备盒中盒</h3><p class="product-price">¥5.00</p></div><div class="product-card"><div class="product-icon">🍊</div><h3 class="product-name">盒中盒中盒(高性价比)</h3><p class="product-price">¥15.00</p></div><div class="product-card"><div class="product-icon">🍊</div><h3 class="product-name">地图画 私信看样式</h3><p class="product-price">¥1.00</p></div></div></section><section class="payment" id="payment"><h2 class="section-title">付款方式</h2><div class="payment-container"><p class="payment-desc">微信扫码付款，付款后请联系我发货</p><img src="https://cllnu.github.io/icon.png" alt="微信付款码" class="payment-code"><p class="payment-tip">付款前请先确认库存，感谢您的支持~</p></div></section><section class="contact" id="contact"><h2 class="section-title">联系我</h2><div class="contact-container"><p class="contact-desc">扫码或点击下方按钮跳转QQ，咨询下单、查看样式、售后问题一站式解决</p><a href="https://qm.qq.com/cgi-bin/qm/qr?k=37CAX5WJE1ngbnPFLdZrjqEdcFa7Ir60" target="_blank" class="contact-btn">一键跳转QQ咨询</a></div></section><footer><p>© 2026 Choppyの盒子小店<br>感谢 Ocean 的支持！</p></footer><script>
-		window.addEventListener('scroll', () => {
-			const navbar = document.getElementById('navbar');
-			if (window.scrollY > 50) {
-				navbar.classList.add('scrolled');
-			} else {
-				navbar.classList.remove('scrolled');
-			}
-		});
-
-		const observerOptions = {
-			threshold: 0.1,
-			rootMargin: '0px 0px -50px 0px'
-		};
-
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.style.opacity = '1';
-					entry.target.style.transform = 'translateY(0)';
-				}
-			});
-		}, observerOptions);
-
-		document.querySelectorAll('.product-card, .section-title, .payment-container, .contact-container').forEach(el => {
-			el.style.opacity = '0';
-			el.style.transform = 'translateY(30px)';
-			el.style.transition = 'all 0.6s ease';
-			observer.observe(el);
-		});
-	</script></body></html>
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            snowArr.forEach(s => {
+                s.update();
+                s.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+</html>
